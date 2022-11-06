@@ -1,0 +1,28 @@
+﻿.validation-summary:empty {
+    display: none;
+}
+.validation-summary li {
+    list-style-type: none;
+}
+
+.button-toolbar {
+    margin-bottom: 1.5em;
+}
+
+.img-none {
+    width: 100%;
+    aspect-ratio: 4/1;
+    background-color: #a9a9a9;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+    .img-none:after {
+        content: '400x100';
+        display: flex;
+        align-items: center;
+    }
+
+input[type=checkbox] {
+    margin-right: 0.5em;
+}

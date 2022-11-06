@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Demo03_ReactIntegration": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:52585;http://localhost:52586"
+    }
+  }
+}

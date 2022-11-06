@@ -1,0 +1,40 @@
+﻿@viewModel Demo03_ReactIntegration.ViewModels.DefaultViewModel, Demo03_ReactIntegration
+@masterPage Views/MasterPage.dotmaster
+@js RechartsModule
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h2>Weather forecast</h2>
+
+    <p>
+        Enter city:
+        <dot:TextBox Text="{value: City}" />
+        <dot:Button Text="Get weather" 
+                    Click="{command: GetWeather()}" />
+    </p>
+    <p>
+        Favorite cities:
+        <dot:LinkButton Text="Brno" Click="{command: City = "Brno"; GetWeather()}" />
+        <dot:LinkButton Text="Bratislava" Click="{command: City = "Bratislava"; GetWeather()}" />
+        <dot:LinkButton Text="Vienna" Click="{command: City = "Vienna"; GetWeather()}" />
+        <dot:LinkButton Text="Berlin" Click="{command: City = "Berlin"; GetWeather()}" />
+        <dot:LinkButton Text="Warsaw" Click="{command: City = "Warsaw"; GetWeather()}" />
+    </p>
+
+    <p InnerText="{value: ErrorMessage}" style="color: red"></p>
+
+    <div DataContext="{value: WeatherForecast}">
+        <js:BarChart data="{value: _this}"
+                     xLabel="DateDisplayText"
+                     serieNames="MinTemperature,MaxTemperature"
+                     serieColors="#8884d8,#82ca9d"
+                     serieClick="{staticCommand: (string serieName) => _root.SelectedSerie = serieName}" />
+
+        <p>
+            Selected serie: {{value: _root.SelectedSerie}}
+        </p>
+    </div>
+
+    <p><a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a></p>
+
+</dot:Content>

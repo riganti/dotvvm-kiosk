@@ -1,0 +1,23 @@
+{
+  "name": "demo03_reactintegration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node esbuild.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "dotvvm-types": "^4.1.0-preview12-final",
+    "esbuild": "^0.15.13"
+  },
+  "dependencies": {
+    "dotvvm-jscomponent-react": "^4.0.0-experimental-0004",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "recharts": "^2.1.16"
+  }
+}

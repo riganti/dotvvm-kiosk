@@ -1,0 +1,64 @@
+﻿$color-main: #3176bb;
+
+.container:first-child {
+    width: 100%;
+    padding: 0;
+}
+
+.form {
+    .form-group {
+        > div {
+            p {
+                color: $color-main;
+
+                &.big {
+                    font-size: 200%;
+                }
+            }
+        }
+
+        .control-label {
+            color: darken($color-main, 15%) !important;
+            padding-right: 1rem;
+        }
+
+        .number {
+            width: 80px;
+        }
+    }
+}
+
+.btn-default {
+    display: inline-block;
+    border: 1px solid $color-main;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 600;
+    transition: all .2s;
+    color: $color-main;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color-main;
+        color: white !important;
+        transition: all .2s;
+    }
+}
+
+.btn-primary {
+    color: white !important;
+    transition: all .2s;
+
+    &:hover {
+        transition: all .2s;
+    }
+}
+
+select, input {
+
+    &:not(.has-error) {
+        border: 1px solid $color-main;
+    }
+
+    color: $color-main !important;
+}

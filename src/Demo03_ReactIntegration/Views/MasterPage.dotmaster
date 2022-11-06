@@ -1,0 +1,26 @@
+﻿@viewModel Demo03_ReactIntegration.ViewModels.MasterPageViewModel, Demo03_ReactIntegration
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo03_ReactIntegration</title>
+    <dot:RequiredResource Name="Styles"/>
+</head>
+<body>
+    <div class="content">
+
+        <img src="/Resources/Images/tree.svg" class="content__background-image content__background-image--left" />
+
+        <a href="https://www.dotvvm.com/" target="_blank">
+            <img src="/Resources/Images/text.svg" class="content__image" />
+        </a>
+        <div class="content__text">
+
+            <dot:ContentPlaceHolder ID="MainContent" />
+        </div>
+
+        <img src="/Resources/Images/tree.svg" class="content__background-image content__background-image content__background-image--right" />
+    </div>
+</body>
+</html>

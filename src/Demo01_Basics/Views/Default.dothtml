@@ -1,0 +1,30 @@
+﻿@viewModel Demo01_Basics.ViewModels.DefaultViewModel, Demo01_Basics
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h2>Basic data-binding</h2>
+
+    <p>
+        <dot:TextBox Text="{value: Number1}" />
+        +
+        <dot:TextBox Text="{value: Number2}" />
+        =
+        {{value: Result}}
+    </p>
+    <p>
+        <!-- 
+            This sends the viewmodel to the server 
+            and executes the Calculate method 
+        -->
+        <dot:Button Text="Calculate"
+                    Click="{command: Calculate()}" />
+
+        <!--
+            This translates the data-binding to JS
+            and performs the operation in the browser
+        -->
+        <dot:Button Text="Calculate in JS"
+                    Click="{command: Result = Number1 + Number2}" />
+    </p>
+
+</dot:Content>

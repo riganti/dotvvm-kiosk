@@ -1,0 +1,67 @@
+﻿@viewModel OrderManagementApp.ViewModels.DefaultViewModel, OrderManagementApp
+@masterPage Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1>
+        <span class="glyphicon glyphicon-book"></span>
+        Manage Orders
+    </h1>
+
+    <p>
+        <dot:RouteLink Text="New Order" 
+                       RouteName="OrderDetail" 
+                       class="btn btn-default" />
+    </p>
+
+    <dot:GridView DataSource="{value: Orders}" class="table table-striped table-bordered">
+        <RowDecorators>
+            <dot:Decorator class-vip-order="{value: TotalPrice > 500}" />
+        </RowDecorators>
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" 
+                                    ValueBinding="{value: Id}" 
+                                    AllowSorting="true" />
+
+            <dot:GridViewTextColumn HeaderText="Created Date" 
+                                    ValueBinding="{value: CreatedDate}" 
+                                    FormatString="d" 
+                                    AllowSorting="true" />
+
+            <dot:GridViewTemplateColumn HeaderText="E-mail Address" 
+                                        AllowSorting="true" 
+                                        SortExpression="ContactEmail">
+                <a href="{value: "mailto:" + ContactEmail}">
+                    {{value: ContactEmail}}
+                </a>
+            </dot:GridViewTemplateColumn>
+
+            <dot:GridViewTextColumn HeaderText="Items" 
+                                    ValueBinding="{value: ItemsCount}" 
+                                    AllowSorting="true" />
+            <dot:GridViewTextColumn HeaderText="Total Price" 
+                                    ValueBinding="{value: TotalPrice}" 
+                                    FormatString="c" 
+                                    AllowSorting="true" />
+
+            <dot:GridViewTemplateColumn CssClass="button-column">
+                <dot:RouteLink RouteName="OrderDetail" 
+                               Param-Id="{value: Id}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Edit
+                </dot:RouteLink>
+            </dot:GridViewTemplateColumn>
+        </Columns>
+    </dot:GridView>
+
+    <div class="text-center">
+        <dot:DataPager class="pagination" DataSet="{value: Orders}" />
+    </div>
+
+</dot:Content>
+
+
+
+
+
+

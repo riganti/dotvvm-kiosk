@@ -1,0 +1,62 @@
+﻿$color-main: #3176bb;
+
+.container:first-child {
+    width: 100%;
+    padding: 0;
+}
+
+.table {
+    border-top: 2px solid $color-main;
+    color: $color-main;
+
+    th {
+        color: white;
+        border-color: $color-main !important;
+        padding: 10px 15px !important;
+        background-color: $color-main;
+        text-align: center;
+
+        a {
+            color: white;
+        }
+    }
+
+    tbody {
+
+        td {
+            border-color: $color-main !important;
+            padding: 10px 15px !important;
+            text-align: center;
+            transition: all .2s;
+
+            &.button-column {
+                padding: 5px 10px;
+
+                a {
+                    padding: 5px;
+                    border: 1px solid $color-main;
+                    border-radius: 4px;
+                    background-color: white;
+                    font-weight: 600;
+                    transition: all .2s;
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: $color-main;
+                        color: white;
+                        transition: all .2s;
+                    }
+                }
+            }
+        }
+
+        tr:hover {
+            background-color: lighten($color-main, 40%);
+            transition: all .3s;
+        }
+
+        tr.vip-order {
+            background-color: lightsalmon;
+        }
+    }
+}
