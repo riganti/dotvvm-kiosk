@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+/src/Demo04_AutoUI/wwwroot/lib
+/src/Demo03_ReactIntegration/wwwroot/js
