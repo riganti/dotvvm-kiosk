@@ -24,7 +24,7 @@
             and performs the operation in the browser
         -->
         <dot:Button Text="Calculate in JS"
-                    Click="{command: Result = Number1 + Number2}" />
+                    Click="{staticCommand: Result = Number1 + Number2}" />
     </p>
 
 </dot:Content>
